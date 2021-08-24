@@ -1,0 +1,50 @@
+﻿<Page x:Class="M_Centres_2._0.non_dll_method"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:M_Centres_2._0"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="non_dll_method">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="327*"/>
+            <RowDefinition Height="76*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="349*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="208*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF007ACC" Opacity="0.9"/>
+        </Grid.Background>
+        <ListBox x:Name="app_list" Margin="10,2,20,10" BorderBrush="Black" Grid.RowSpan="2" Grid.Row="1">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.6"/>
+            </ListBox.Background>
+        </ListBox>
+        <Button x:Name="app_trial" Content="Remove Trial" Margin="3,6,9,10" Click="Button_Click" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="app_purchase" Content="In App purchase Hack" Margin="2,6,2,10" Grid.Column="2" MinWidth="195" Grid.Row="2" Click="Button_Click_2" Grid.ColumnSpan="2"/>
+        <RichTextBox x:Name="non_logger" Margin="6,2,9,11" Grid.Column="2" Grid.ColumnSpan="4" IsReadOnly="True" Grid.Row="1">
+            <RichTextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.6"/>
+            </RichTextBox.Background>
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Logs will appear here"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="nondl_back" Content="Back" HorizontalAlignment="Left" Height="44" Margin="10,0,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click_1"/>
+        <Button x:Name="app_load" Content="Reload App List" Margin="199,0,20,3" Click="load_app_list" Height="44" VerticalAlignment="Bottom"/>
+        <Button Content="Automatically Remove trial" Grid.Column="3" Margin="13,0,9,3" Click="Button_Click_3" Grid.ColumnSpan="3" Height="44" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Page>

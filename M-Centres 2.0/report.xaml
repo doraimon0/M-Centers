@@ -1,0 +1,38 @@
+﻿<Page x:Name="uo" x:Class="M_Centres_2._0.report"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:M_Centres_2._0"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="report">
+
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF007ACC" Opacity="0.9"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+
+        </Grid.RowDefinitions>
+        <RichTextBox x:Name="log_box" Foreground="Black" BorderBrush="Black" SelectionBrush="#FF4C5513"  Margin="10,10,10,257.443" MinHeight="182.557" HorizontalAlignment="Left" VerticalContentAlignment="Bottom" IsReadOnly="True" TextChanged="log_box_TextChanged" VerticalScrollBarVisibility="Auto">
+            <RichTextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.7"/>
+            </RichTextBox.Background>
+            <FlowDocument/>
+        </RichTextBox>
+        <Button x:Name="oper" Content="Start Operation" Margin="261.457,0,265.221,10" MaxHeight="69.464" MinWidth="273.322" VerticalAlignment="Bottom" Height="44.121" MaxWidth="273.322" Click="Button_Click_1"/>
+        <Button x:Name="bck" Content="Back" Margin="10,0,0,10" MinWidth="107.785" MaxWidth="107.785" MinHeight="44.121" MaxHeight="44.121" Height="44.121" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="107.785" Click="Button_Click"/>
+        <Border x:Name="opts" Margin="10,0,10,59.121" MaxHeight="127.547" Height="127.184" VerticalAlignment="Bottom" BorderBrush="Black" BorderThickness="1">
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0.6"/>
+            </Border.Background>
+
+            <Grid>
+                <RadioButton x:Name="opt1" Content="Restore only Modded files" Height="27.229" Margin="10,10,592.592,0" VerticalAlignment="Top" MaxHeight="27.229" FontSize="20" FontWeight="Bold"/>
+                <RadioButton x:Name="opt2" Content="Restore All files" Height="27.229" Margin="10,85.955,592.592,0" VerticalAlignment="Top" MaxHeight="27.229" FontSize="20" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

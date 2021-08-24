@@ -1,0 +1,169 @@
+﻿<Window x:Name="win" x:Class="M_Centres_2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M_Centres_2._0"
+        mc:Ignorable="d"
+        Title="M Centres 3.3 Web Edition" Height="626" Width="989" Icon="Untitled.png" WindowStyle="ThreeDBorderWindow" BorderThickness="1" BorderBrush="Black" Background="White" SizeChanged="Window_SizeChanged" FontFamily="Courier New" FontSize="20" Foreground="White" MinWidth="989" MinHeight="626" Padding="10,0">
+    <Window.Resources>
+
+        <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}" x:Key="PopupMenuItem">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type MenuItem}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" Background="{TemplateBinding Background}" Margin="-1" MinWidth="{TemplateBinding MinWidth}">
+
+                            <ContentPresenter ContentSource="Header"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderBrush" Value="White"></Setter>
+
+            <Setter Property="BorderThickness" Value="0,0,0,0"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Background" Value="Black">
+
+            </Setter>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="Margin" Value="0"></Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <ContextMenu x:Key="fh" BorderBrush="{x:Null}"  Foreground="White" MinWidth="70" MinHeight="30" >
+            <ContextMenu.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </ContextMenu.Background>
+            <MenuItem x:Name="copier" Header="Copy Last Error Details" MaxHeight="20" MinWidth="20" Icon="{x:Null}" Style="{DynamicResource PopupMenuItem}"    />
+            <MenuItem x:Name="reporta" Header="Report Last Error to Discord" MaxHeight="20" MinWidth="20" Icon="{x:Null}" Style="{DynamicResource PopupMenuItem}"    />
+            <MenuItem x:Name="select_all" Header="Select All" MaxHeight="20" MinWidth="20" Icon="{x:Null}" Style="{DynamicResource PopupMenuItem}"    />
+            <MenuItem x:Name="clear_cmd" Header="Clear Log" MaxHeight="20" MinWidth="20" Icon="{x:Null}" Style="{DynamicResource PopupMenuItem}"    />
+
+        </ContextMenu>
+
+    </Window.Resources>
+
+    <Grid x:Name="olk">
+        <Grid.Background>
+            <SolidColorBrush Color="#FF007ACC" Opacity="0.9"/>
+        </Grid.Background>
+        <RichTextBox x:Name="agree" BorderBrush="Black" BorderThickness="2" Height="254" VerticalAlignment="Top" HorizontalAlignment="Left" Width="790" TextChanged="agree_TextChanged" Foreground="#FF020000" IsReadOnly="True" VerticalScrollBarVisibility="Visible" SelectionBrush="#FF4C5513" ContextMenu="{DynamicResource fh}">
+
+            <RichTextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.6"/>
+            </RichTextBox.Background>
+            <FlowDocument>
+                <Paragraph>
+                    <Run FontWeight="SemiBold" Text="Make sure you have set Windows Language to English!" Foreground="BlanchedAlmond" TextDecorations="Underline"/>
+                    <LineBreak/>
+                    <Run FontWeight="Bold" Text="AGREEMENT" TextDecorations="Underline"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="1) You are the only one responsible for using this app."/>
+                    <LineBreak/>
+                    <Run Text="2) In case of any legal issues don't blame me."/>
+                    <LineBreak/>
+                    <Run Text="3) I take out responsibility of any legal troubles."/>
+                    <LineBreak/>
+                    <Run Text="4) By using the app, You are agreeing to all terms"/>
+                    <LineBreak/>
+                    <Run Text="   that are written here."/>
+                </Paragraph>
+                <Paragraph>
+                    <Run FontWeight="Bold" Text="TERMS OF USE" TextDecorations="Underline"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="1) You are only allowed to use the app"/>
+                    <LineBreak/>
+                    <Run Text="   in the way it is intended to be used."/>
+                    <LineBreak/>
+                    <Run Text="2) You are not allowed to edit the app"/>
+                    <LineBreak/>
+                    <Run Text="   and claim it as yours."/>
+                    <LineBreak/>
+                    <Run Text="3) Unauthorized distribution without"/>
+                    <LineBreak/>
+                    <Run Text="   giving credits is not allowed."/>
+                </Paragraph>
+
+                <Paragraph>
+                    <Run FontWeight="Bold" Text="Support" TextDecorations="Underline"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="1) In case of any problems, contact at"/>
+                    <Run Text=" "/>
+                    <Run Cursor="Hand" FontWeight="Bold" Text="discord" MouseEnter="dis_push" MouseLeave="dis_pop" MouseDown="Run_MouseDown" MouseUp="Run_MouseUp"/>
+                    <LineBreak/>
+                    <Run Text="2) Please make sure you are"/>
+                    <LineBreak/>
+                    <Run Text="   not using a too old window."/>
+                    <LineBreak/>
+                    <Run Text="3) This hack was made in v1909 windows 10"/>
+                    <LineBreak/>
+                    <Run Text="   and still works on latest v2004  windows 10"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run FontWeight="Bold" Text="UPDATES" TextDecorations="Underline"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="1) Updates will be done when this"/>
+                    <Run Cursor="Hand" FontWeight="Bold" Text="video" MouseEnter="yt_push" MouseLeave="yt_pop" MouseDown="Run_MouseDown_1" MouseUp="Run_MouseUp_1"/>
+                    <Run Text="gets 1000 Likes. 😂"/>
+                    <LineBreak/>
+                    <Run/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="button" Content="Youtube Channel" Height="32" Margin="10,0,0,10" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="218" Padding="5" Click="button_Click_2" Foreground="Black" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Discord Support" HorizontalAlignment="Right" Height="32.248" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="217.6" Padding="5" Click="Button_Click_1" Foreground="Black">
+          
+        </Button>
+        <Border x:Name="conte" BorderBrush="Black" BorderThickness="1" Margin="10,0,10,47.248" Padding="10" Height="110.752" VerticalAlignment="Bottom">
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0.6"/>
+            </Border.Background>
+            <Grid  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="69"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0"  />
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition Width="267"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="mian_but" Content="Button" Height="52.852" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="261.47" ToolTip="Installs dll version of hack to C:\Windows" Click="mian_but_Click" Foreground="Black">
+                    
+                </Button>
+
+                <Button x:Name="nondll_main"  Content="Use hack without &#xA;Install(beta)" Height="52.852" Margin="1,10,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Grid.Column="2" HorizontalAlignment="Left" Width="261.47" ToolTip="Upcoming feature that enables trial remove without modifiyng dlls" Foreground="Black" Click="Button_Click_3">
+                   
+                </Button>
+                <Button  Content="DLL Repair" Height="52.852" Margin="0,0,0,-12.852" VerticalAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="261.47" Grid.Row="1" Grid.Column="1" ToolTip="Replace missing and currupt or modified dlls with fresh dlls from MS Servers" Click="Button_Click" Foreground="Black">
+                  </Button>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
